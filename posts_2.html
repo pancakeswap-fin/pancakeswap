@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore the Pancake of Liberty: From Flatness to Decentralized Existence. Dive into our web3 ecosystem and experience digital autonomy through DeFi." name="description"/>
+<meta content="pancakeswap, web3 ecosystem, digital autonomy, freedom to swap, DeFi, autonomous finance design" name="keywords"/>
+<title>Pancake - The Pancake of Liberty: From Flatness to Decentralized Existence</title>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&amp;family=Nunito:wght@300&amp;family=Caveat&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+        --lavender: rgb(230, 230, 250);
+        --mint-green: rgb(202, 255, 191);
+        --peach: rgb(255, 218, 185);
+        --muted-teal: rgb(128, 203, 196);
+        --dusty-rose: rgb(188, 143, 143);
+        --off-white: rgb(253, 253, 253);
+    }
+    
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: var(--off-white);
+        color: #333;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+    }
+    
+    .accent-text {
+        font-family: 'Caveat', cursive;
+    }
+    
+    .btn {
+        border-radius: 50px;
+        transition: all 0.5s ease;
+    }
+    
+    .btn:hover {
+        transform: scale(1.05);
+    }
+    
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    
+    input {
+        border: none;
+        border-bottom: 2px solid var(--muted-teal);
+        background-color: transparent;
+    }
+    
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Animate elements on scroll
+        const animateOnScrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            animateOnScrollObserver.observe(element);
+        });
+
+        // Custom cursor effect
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    });
+</script>
+<div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" id="cookie-popup" style="background-color: rgba(0,0,0,0.5); z-index: 9999;">
+<div class="bg-white p-4 rounded-pill" style="max-width: 400px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+<h5 class="mb-3 text-center" style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">Syrupy Sweet Cookies!</h5>
+<p class="mb-4" style="font-family: 'Nunito', sans-serif; color: #BCAAA4;">We use cookies to make your experience on our decentralized pancake stack extra fluffy. Is that okay with you?</p>
+<div class="d-flex justify-content-center">
+<button class="btn me-2 rounded-pill" id="accept-cookies" style="background: linear-gradient(45deg, #E6E6FA, #CAFDBF); color: #80CBC4; font-family: 'Caveat', cursive;">Stack 'em up!</button>
+<button class="btn rounded-pill" id="reject-cookies" style="background: linear-gradient(45deg, #FFDAB9, #BC8F8F); color: #80CBC4; font-family: 'Caveat', cursive;">No syrup for me</button>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cookiePopup = document.getElementById('cookie-popup');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const rejectBtn = document.getElementById('reject-cookies');
+
+  function hideCookiePopup() {
+    cookiePopup.style.display = 'none !important';
+    cookiePopup.remove(); // Completely remove from DOM
+  }
+
+  function setCookiePreference(accepted) {
+    localStorage.setItem('cookiePreference', accepted ? 'accepted' : 'rejected');
+    hideCookiePopup();
+  }
+
+  if (localStorage.getItem('cookiePreference') === null) {
+    cookiePopup.style.display = 'flex';
+  } else {
+    hideCookiePopup();
+  }
+
+  acceptBtn.addEventListener('click', function() {
+    setCookiePreference(true);
+  });
+
+  rejectBtn.addEventListener('click', function() {
+    setCookiePreference(false);
+  });
+});
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Nunito:wght@300&family=Caveat&display=swap');
+
+#cookie-popup {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#cookie-popup button {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#cookie-popup button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<div style="flex: 1;">
+<header>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+<a class="navbar-brand" href="/" style="font-family: 'Quicksand', sans-serif; font-weight: bold; font-size: 2rem; color: #8B4513; text-decoration: none;">
+                Pancake
+            </a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="posts.html" style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #E6E6FA; background: linear-gradient(45deg, #CAE6C0, #E6E6FA); padding: 10px 20px; border-radius: 25px; margin: 0 10px; transition: all 0.3s ease;">Posts</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html" style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #E6E6FA; background: linear-gradient(45deg, #E6E6FA, #FFDAB9); padding: 10px 20px; border-radius: 25px; margin: 0 10px; transition: all 0.3s ease;">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contacts.html" style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #E6E6FA; background: linear-gradient(45deg, #FFDAB9, #80CBC4); padding: 10px 20px; border-radius: 25px; margin: 0 10px; transition: all 0.3s ease;">Contacts</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="privacy_policy.html" style="font-family: 'Nunito', sans-serif; font-size: 1.2rem; color: #E6E6FA; background: linear-gradient(45deg, #80CBC4, #BC8F8F); padding: 10px 20px; border-radius: 25px; margin: 0 10px; transition: all 0.3s ease;">Privacy Policy</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Nunito:wght@300&family=Caveat&display=swap');
+
+    .navbar {
+        background: rgba(253, 253, 253, 0.8) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-link:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 991px) {
+        .navbar-nav {
+            align-items: center;
+        }
+        .nav-item {
+            margin: 10px 0;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseover', (e) => {
+                e.target.style.transform = 'scale(1.05) rotate(2deg)';
+            });
+            link.addEventListener('mouseout', (e) => {
+                e.target.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navbarToggler.addEventListener('click', () => {
+            navbarCollapse.classList.toggle('show');
+        });
+    });
+</script>
+</header>
+<div class="container mt-5">
+<article class="pancake-article">
+<h1 class="mb-4" style="font-family: 'Quicksand', sans-serif; color: #8C6F6F;">Pancake Recipes Around the World: A Decentralized Culinary Journey</h1>
+<p class="lead" style="font-family: 'Nunito', sans-serif; color: #4A4A4A;">Embark on a global adventure through the world of pancakes, where each recipe represents a unique node in the vast network of culinary traditions. Just as DeFi empowers financial liberationdom, these diverse pancake styles offer a taste of cultural autonomy on your plate.</p>
+<section class="mb-5">
+<h2 style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">French Crêpes: The Thin Layer of Financial Flexibility</h2>
+<img alt="A stack of thin, delicate French crêpes folded into triangles, dusted with powdered sugar, and garnished with fresh berries. The plate is set on a rustic wooden table with a small pot of honey nearby." class="img-fluid rounded mb-3" src="images/image_0_posts_2.png"/>
+<p style="font-family: 'Nunito', sans-serif; color: #4A4A4A;">Crêpes, the gossamer-thin pancakes of France, symbolize the flexibility of decentralized finance. Their versatility in accepting both sweet and savory toppings mirrors the adaptability of smart contracts in the Web3 ecosystem.</p>
+</section>
+<section class="mb-5">
+<h2 style="font-family: 'Quicksand', sans-serif; color: #BC8F8F;">American Pancakes: Stacking Gains in the DeFi Landscape</h2>
+<img alt="A tall stack of fluffy American pancakes with a pat of melting butter on top, cascading with golden maple syrup. A side of crispy bacon and a glass of fresh orange juice complete the scene." class="img-fluid rounded mb-3" src="images/image_1_posts_2.png"/>
+<p style="font-family: 'Nunito', sans-serif; color: #4A4A4A;">The towering stack of American pancakes represents the layered apapproachach to yield farming in DeFi. Each pancake in the stack is a new opportunity for growth, drizzled with the sweet syrup of compounded returns.</p>
+</section>
+<section class="mb-5">
+<h2 style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">Japanese Dorayaki: The Harmony of Traditional and Contemporaryern Finance</h2>
+<img alt="Several Dorayaki pancakes filled with red bean paste, arranged artfully on a traditional Japanese ceramic plate. A small cup of green tea sits beside the plate, with cherry blossoms in the background." class="img-fluid rounded mb-3" src="images/image_2_posts_2.png"/>
+<p style="font-family: 'Nunito', sans-serif; color: #4A4A4A;">Dorayaki, with its sweet filling sandwiched between two pancakes, represents the bridge between traditional finance and DeFi. It's a perfect metaphor for how PancakeSwap creates harmony in the autonomous finance design.</p>
+</section>
+<section class="mb-5">
+<h2 style="font-family: 'Quicksand', sans-serif; color: #BC8F8F;">Ethiopian Injera: The Decentralized Network of Flavors</h2>
+<img alt="A large, spongy Injera pancake serving as the base for various colorful Ethiopian dishes. The circular platter showcases a variety of stews, vegetables, and meats arranged in a vibrant, communal style." class="img-fluid rounded mb-3" src="images/image_3_posts_2.png"/>
+<p style="font-family: 'Nunito', sans-serif; color: #4A4A4A;">Injera, the spongy flatbread of Ethiopia, serves as a canvas for a variety of dishes, much like how the blockchain serves as a foundation for diverse DeFi applications. Its communal serving style reflects the shared, transparent nature of blockchain technology.</p>
+</section>
+<section class="mb-5">
+<h2 style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">Russian Blini: Small Tokens of Decentralized Delight</h2>
+<img alt="A plate of small, golden Russian blini pancakes topped with smoked salmon, a dollop of sour cream, and a sprinkling of dill. Caviar and lemon wedges are arranged around the plate for garnish." class="img-fluid rounded mb-3" src="images/image_4_posts_2.png"/>
+<p style="font-family: 'Nunito', sans-serif; color: #4A4A4A;">Blini, the small yeasted pancakes of Russia, can be likened to tokens in the DeFi world. Each one is a small, but significant part of a larger ecosystem, offering a taste of unrestricteddom to swap and combine flavors as one desires.</p>
+</section>
+<div class="conclusion mt-5">
+<p style="font-family: 'Caveat', cursive; font-size: 1.2rem; color: #4A4A4A;">Just as these pancakes represent the rich tapestry of global cuisines, PancakeSwap embodies the diverse, interconnected world of DeFi. Each recipe, like each smart contract, opens up new possibilities for creation and exchange in our decentralized future.</p>
+</div>
+</article>
+</div>
+<style>
+    body {
+        background-color: #FDFDFD;
+    }
+    .pancake-article {
+        background: linear-gradient(135deg, #E6E6FA, #CAFFE0, #FFDAB9);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+        font-weight: bold;
+    }
+    p {
+        line-height: 1.8;
+    }
+    img {
+        transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+        transform: scale(1.05);
+    }
+</style>
+</div>
+<footer style="width: 100%; z-index: 1000;">
+<div class="footer bg-light py-4">
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-3 mb-md-0">
+<h5 class="mb-3" style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">Pancake</h5>
+<p style="font-family: 'Nunito', sans-serif; color: #BC8F8F;">Empowering digital autonomy through decentralized finance. Join the web3 ecosystem revolution!</p>
+<div class="social-icons">
+<a class="me-2" href="#" style="color: #80CBC4;"><i class="fab fa-twitter"></i></a>
+<a class="me-2" href="#" style="color: #80CBC4;"><i class="fab fa-telegram"></i></a>
+<a class="me-2" href="#" style="color: #80CBC4;"><i class="fab fa-discord"></i></a>
+<a href="#" style="color: #80CBC4;"><i class="fab fa-github"></i></a>
+</div>
+</div>
+<div class="col-md-4 mb-3 mb-md-0">
+<h5 class="mb-3" style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">Quick Links</h5>
+<ul class="list-unstyled">
+<li><a href="posts.html" style="font-family: 'Nunito', sans-serif; color: #BC8F8F; text-decoration: none;">Posts</a></li>
+<li><a href="about.html" style="font-family: 'Nunito', sans-serif; color: #BC8F8F; text-decoration: none;">About</a></li>
+<li><a href="contacts.html" style="font-family: 'Nunito', sans-serif; color: #BC8F8F; text-decoration: none;">Contacts</a></li>
+<li><a href="privacy_policy.html" style="font-family: 'Nunito', sans-serif; color: #BC8F8F; text-decoration: none;">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h5 class="mb-3" style="font-family: 'Quicksand', sans-serif; color: #80CBC4;">Contact Us</h5>
+<p style="font-family: 'Nunito', sans-serif; color: #BC8F8F;">123 DeFi Street, Blockchain City, 54321</p>
+<p style="font-family: 'Nunito', sans-serif; color: #BC8F8F;">Email: info@pancakeswap.finance</p>
+<p style="font-family: 'Nunito', sans-serif; color: #BC8F8F;">Phone: +1 (555) 123-4567</p>
+</div>
+</div>
+<hr class="my-4" style="background-color: #E6E6FA;"/>
+<div class="row">
+<div class="col-md-12 text-center">
+<p style="font-family: 'Nunito', sans-serif; color: #BC8F8F;">© 2024 Pancake. All rights reserved. Embracing the unrestricteddom to swap in the DeFi realm.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('.footer a').forEach(link => {
+    link.addEventListener('mouseover', function() {
+        this.style.color = '#CAFFE0';
+        this.style.transition = 'color 0.3s ease';
+    });
+    link.addEventListener('mouseout', function() {
+        this.style.color = '#BC8F8F';
+    });
+});
+</script>
+</footer>
+</body>
+</html>
